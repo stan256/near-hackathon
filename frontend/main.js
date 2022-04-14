@@ -1,4 +1,3 @@
-const nearAPI = window.nearApi;
 const CONTRACT_NAME = 'dev-1649775182353-11225347449060';
 const testnetNearConfig = {
     networkId: 'testnet',
@@ -9,15 +8,15 @@ const testnetNearConfig = {
 };
 
 async function connect(nearConfig) {
-    window.near = await nearAPI.connect({
+    window.near = await nearApi.connect({
         deps: {
-            keyStore: new nearAPI.keyStores.BrowserLocalStorageKeyStore()
+            keyStore: new nearApi.keyStores.BrowserLocalStorageKeyStore()
         },
         ...nearConfig
     });
 
-    window.walletConnection = new nearAPI.WalletConnection(window.near);
-    window.contract = await new nearAPI.Contract(window.walletConnection.account(), nearConfig.contractName, {
+    window.walletConnection = new nearApi.WalletConnection(window.near);
+    window.contract = await new nearApi.Contract(window.walletConnection.account(), nearConfig.contractName, {
         viewMethods: ['greet'],
         sender: window.walletConnection.getAccountId()
     });
