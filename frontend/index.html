@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Near Hackathon - Junkwin - Greeting</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
+    <div class="text-center">
+        <p><img src="https://near.org/wp-content/uploads/2021/09/brand-stack-300x300.png" width="150" height="150" alt="Near Protocol logo"></p>
+        <p><label for="greeter">Please type your name:</label></p>
+        <p><input type="text" id="greeter"></p>
+        <p><button class="btn-dark" id="greeter_btn">Greet!</button></p>
+        <h2 class="mt-5" id="greeting"></h2>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/near-api-js@0.44.0/dist/near-api-js.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
