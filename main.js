@@ -26,6 +26,8 @@ window.nearInitPromise = connect(testnetNearConfig);
 
 document.getElementById('greeter_btn').addEventListener('click', async () => {
     const text = document.getElementById("greeter").value;
-    let response = await contract.greet({"name": text}).catch(console.error);
-    document.getElementById("greeting").innerText = response;
+    if (text !== "") {
+        let response = await contract.greet({"name": text}).catch(console.error);
+        document.getElementById("greeting").innerText = response;
+    }
 })
